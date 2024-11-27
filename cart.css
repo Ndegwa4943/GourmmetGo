@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf5f5; /* Light background for contrast */
+    color: #333;
+}
+
+header {
+    background-color: #87041a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+header button {
+    padding: 10px 15px;
+    border: none;
+    background-color: white;
+    color: #87041a;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #ab3b4e;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-details p:first-child {
+    font-size: 12px;
+    color: #87041a;
+    margin: 0;
+}
+
+.item-details h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.item-details p:last-child {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.quantity-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.quantity-control button {
+    background-color: #87041a;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.quantity-control button:hover {
+    transform: scale(1.1);
+}
+
+.quantity {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.total p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.total p:last-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.place-order {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #87041a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.place-order:hover {
+    background-color: #6a0317;
+    transform: scale(1.05);
+}
+
+
+.fa-trash-can{
+    color: #ffffff;
+  }
+  .fa-arrow-left{
+    color: #ffffff;
+  }

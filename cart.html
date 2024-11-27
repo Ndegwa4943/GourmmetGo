@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>    
+    <link rel="stylesheet" href="cart.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>Item Cart</h1>
+        <button><a href="menu.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+    </header>
+
+    <main>
+        <div id="cart-items">
+            <!-- Dynamic cart items will be displayed here -->
+        </div>
+
+        <div class="total">
+            <h5>SUB TOTAL</h5>
+            <p class="subtotal">ksh. 0.00</p>
+            <h5>FEE</h5>
+            <p class="fee">+ ksh. 3.5 (TAX ID)</p>
+            <h5>TOTAL</h5>
+            <p class="total">ksh. 0.00</p>
+        </div>
+
+        <button class="place-order" onclick="placeOrder()">PLACE ORDER</button>
+    </main>
+    
+    <script>
+        function displayCartItems() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            cartItems.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.setAttribute('data-index', index);
+
+                const titleElement = document.createElement('h3');
+                titleElement.innerText = item.title;
+
+                const descriptionElement = document.createElement('p');
+                descriptionElement.innerText = item.description;
+
+                const quantityControl = document.createElement('div');
+                quantityControl.classList.add('quantity-control');
+
+                const decreaseButton = document.createElement('button');
+                decreaseButton.innerText = '-';
+                decreaseButton.onclick = () => updateQuantity(index, -1);
+
+                const quantityElement = document.createElement('span');
+                quantityElement.classList.add('quantity');
+                quantityElement.innerText = item.quantity || 1;
+
+                const increaseButton = document.createElement('button');
+                increaseButton.innerText = '+';
+                increaseButton.onclick = () => updateQuantity(index, 1);
+
+                const trashButton = document.createElement('button');
+                trashButton.innerHTML = '<i class="fa fa-trash"></i>';
+                trashButton.onclick = () => removeItem(index);
+
+                quantityControl.appendChild(decreaseButton);
+                quantityControl.appendChild(quantityElement);
+                quantityControl.appendChild(increaseButton);
+
+                itemElement.appendChild(titleElement);
+                itemElement.appendChild(descriptionElement);
+                itemElement.appendChild(quantityControl);
+                itemElement.appendChild(trashButton);
+
+                cartItemsContainer.appendChild(itemElement);
+            });
+            calculateTotal();
+        }
+
+        function updateQuantity(index, delta) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            if (!cartItems[index].quantity) {
+                cartItems[index].quantity = 1;
+            }
+            cartItems[index].quantity = Math.max(1, cartItems[index].quantity + delta);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        function removeItem(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems();
+        }
+
+        function calculateTotal() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let subtotal = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+            const fee = 3.5;
+            const total = subtotal + fee;
+            document.querySelector('.total .subtotal').textContent = `ksh. ${subtotal.toFixed(2)}`;
+            document.querySelector('.total .fee').textContent = `+ ksh. ${fee} (TAX ID)`;
+            document.querySelector('.total .total').textContent = `ksh. ${total.toFixed(2)}`;
+        }
+
+        function placeOrder() {
+            // Clear cart items from local storage
+            localStorage.removeItem('cartItems');
+
+            // Display success message
+            alert('Order Successful! Enjoy. Don\'t forget to savor the flavor ;)');
+
+            // Refresh the cart items display
+            displayCartItems();
+        }
+
+        window.onload = displayCartItems;
+    </script>
+</body>
+</html>
+
+<!-- cart.css -->
+<style>
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .item-details {
+    flex-grow: 1;
+  }
+
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity-control button {
+    margin: 0 5px;
+  }
+
+  .edit_btn {
+    display: flex;
+    align-items: center;
+  }
+
+  .total {
+    text-align: right;
+  }
+
+  .place-order {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+
+
+

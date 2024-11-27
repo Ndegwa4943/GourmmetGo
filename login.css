@@ -1,0 +1,94 @@
+    /* Theme Colors */
+    :root {
+      --primary-color: #854d27;
+      --secondary-color: #dd7230;
+      --accent-color: #f4c95d;
+      --bg-color: #e7e393;
+      --text-color: #04030f;
+    }
+
+    /* login.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url(images/GourmetGo.jpg);
+  background-color: #ffe6e6; /* Light red tone to complement the primary */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 500px;
+}
+
+form {
+  background-color: #ffffff; /* White for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #8b0000; /* Matches primary color */
+}
+
+.form-control {
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+}
+
+.form-control:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 4px rgba(139, 0, 0, 0.5);
+}
+
+.btn-primary {
+  background-color: #8b0000; /* Deep red for primary */
+  border-color: #8b0000;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a30000; /* Slightly lighter red for hover */
+}
+
+.text-primary {
+  color: #8b0000 !important;
+  font-weight: bold;
+}
+
+.text-primary:hover {
+  color: #a30000 !important;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button a:hover {
+  text-decoration: none;
+}
+
+img {
+  border-radius: 50%; /* Rounds the image for a polished look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

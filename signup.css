@@ -1,0 +1,76 @@
+    /* Theme Colors */
+    :root {
+      --primary-color: #854d27;
+      --secondary-color: #dd7230;
+      --accent-color: #f4c95d;
+      --bg-color: #e7e393;
+      --text-color: #04030f;
+    }
+
+    /* General Styles */
+    body {
+      background-color: transparent;
+      background-image: url(images/GourmetGo.jpg);
+      color: var(--text-color);
+    }
+
+    h2, h4 {
+      color: var(--primary-color);
+    }
+
+    .form-label {
+      color: var(--primary-color);
+    }
+
+    /* Step Indicator */
+    .step-indicator {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .step-indicator .step {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ccc;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+      margin: 0 5px;
+    }
+
+    .step-indicator .step.active {
+      background-color: var(--primary-color);
+    }
+
+    /* Form Sections */
+    .step-form {
+      display: none;
+    }
+
+    .step-form.active {
+      display: block;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    .btn-secondary {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--text-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }

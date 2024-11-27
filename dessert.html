@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu_dets.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic"></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="notifications">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Home</a></li>
+                <li><a href="food_feed.html">Food Feed</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <section class="menu-section">
+            <div class="menu-item" id="C_L_cake">
+                <h2>Chocolate Lava Cake
+                    <a href="cart.html" onclick="addToCart('C_L_cake', event)"> <i class="fa fa-cart-plus" aria-hidden="true"></i> </a>
+                </h2>
+                <p>Rich chocolate cake with a molten chocolate center, served with vanilla ice cream.</p>
+            </div>
+            <div class="menu-item" id="Cs_cake">
+                <h2>Cheesecake
+                    <a href="cart.html" onclick="addToCart('Cs_cake', event)"> <i class="fa fa-cart-plus" aria-hidden="true"></i> </a>
+                </h2>
+                <p>Creamy cheesecake with a graham cracker crust and a strawberry topping.</p>
+            </div>
+            <div class="menu-item" id="A_pie">
+                <h2>Apple Pie
+                    <a href="cart.html" onclick="addToCart('A_pie', event)"> <i class="fa fa-cart-plus" aria-hidden="true"></i> </a>
+                </h2>
+                <p>Classic apple pie with a flaky crust, served with a scoop of vanilla ice cream.</p>
+            </div>
+            <div class="menu-item" id="T_misu">
+                <h2>Tiramisu
+                    <a href="cart.html" onclick="addToCart('T_misu', event)"> <i class="fa fa-cart-plus" aria-hidden="true"></i> </a>
+                </h2>
+                <p>Traditional Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.</p>
+            </div>
+            <div class="menu-item" id="L_tart">
+                <h2>Lemon Tart
+                    <a href="cart.html" onclick="addToCart('L_tart', event)"> <i class="fa fa-cart-plus" aria-hidden="true"></i> </a>
+                </h2>
+                <p>Tangy lemon filling in a buttery tart crust, topped with whipped cream.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+    <script src="JS/add_cart.js"></script>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</body>
+</html>
